@@ -1,5 +1,5 @@
 Feature: Get a single carts
-  @Task
+  @Project
   Scenario Outline: Get a single carts with valid path
     Given Get a single carts with valid <id>
     When Send request get a single carts
@@ -10,7 +10,7 @@ Feature: Get a single carts
     |id|
     |1 |
 
-    @Task
+    @Project
     Scenario Outline: Get a single carts with invalid path
       Given Get a single carts with invalid path "<chara>"
       When Send request get a single carts invalid

@@ -1,5 +1,5 @@
 Feature: Get All Carts
-  @Task
+  @Project
   Scenario: Get all carts with valid path
     Given Get all carts with valid path
     When Send request get all carts
@@ -7,7 +7,7 @@ Feature: Get All Carts
     And Response body should be total 20
     And Validate get all carts json schema "GetAllCartsSchema.json"
 
-    @Task
+    @Project
     Scenario: Get all carts with invalid path
       Given Get all carts with invalid path
       When Send request get all carts invalid path
