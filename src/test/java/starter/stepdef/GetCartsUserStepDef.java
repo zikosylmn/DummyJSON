@@ -46,4 +46,17 @@ public class GetCartsUserStepDef {
         SerenityRest.and()
                 .body(JsonSchemaValidator.matchesJsonSchema(jsonCartsUser));
     }
+
+    @Given("Get carts of user with invalid path {string}")
+    public void getCartsOfUserWithInvalidPath(String chara) {
+        dummyJsonCartsUserAPI.getCartsUserInvalid(chara);
+    }
+    @When("Send request get carts of a user invalid")
+    public void sendRequestGetCartsOfAUserInvalid() {
+        SerenityRest.when().get(DummyJsonCartsUserAPI.INVALID_GET_CARTS_USER);
+    }
+    @And("Response body get carts of a user should be {string}")
+    public void responseBodyGetCartsOfAUserShouldBe(String message) {
+        SerenityRest.and().body(DummyJsonResponses.MESSAGE, equalTo(message));
+    }
 }
